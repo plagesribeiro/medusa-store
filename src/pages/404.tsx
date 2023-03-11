@@ -15,7 +15,7 @@ const NotFound: NextPageWithLayout = () => {
         </p>
         <Link href="/">
           <a className="mt-4 underline text-base-regular text-gray-900">
-            Go to frontpage
+            Página Inicial
           </a>
         </Link>
       </div>

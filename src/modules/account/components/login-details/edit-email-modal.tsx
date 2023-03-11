@@ -68,13 +68,13 @@ const EditEmailModal: React.FC<EditEmailModalProps> = ({ customer }) => {
     <div>
       <EditButton onClick={open} />
       <Modal isOpen={state} close={close}>
-        <Modal.Title>Edit your email</Modal.Title>
+        <Modal.Title>Editar email</Modal.Title>
         <Modal.Body>
           <div className="flex flex-col w-full">
             <Input
               label="Email"
               {...register("email", {
-                required: "Email is required",
+                required: "Campo obrigatório",
                 pattern: {
                   value: emailRegex,
                   message: "Must be a valid email",
@@ -92,10 +92,10 @@ const EditEmailModal: React.FC<EditEmailModalProps> = ({ customer }) => {
             className="!bg-gray-200 !text-gray-900 !border-gray-200 min-h-0"
             onClick={close}
           >
-            Cancel
+            Cancelar
           </Button>
           <Button className="min-h-0" onClick={submit} disabled={submitting}>
-            Save
+            Salvar
             {submitting && <Spinner />}
           </Button>
         </Modal.Footer>

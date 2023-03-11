@@ -11,10 +11,9 @@ const AddressesTemplate = () => {
   return (
     <div className="w-full">
       <div className="mb-8 flex flex-col gap-y-4">
-        <h1 className="text-2xl-semi">Shipping Addresses</h1>
+        <h1 className="text-2xl-semi">Endereços de entrega</h1>
         <p className="text-base-regular">
-          View and update your shipping addresses, you can add as many as you
-          like. Saving your addresses will make them available during checkout.
+          Aqui você pode ver e editar todos os seus endereços de entrega.
         </p>
       </div>
       <AddressBook customer={customer} />

@@ -47,7 +47,7 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
 
     if (data.old_password === data.new_password) {
       setSubmitting(false)
-      setError("New password must be different from old password.")
+      setError("A senha nova deve ser diferente da antiga.")
       return
     }
 
@@ -61,7 +61,7 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
       })
 
     if (!passwordMatches) {
-      setError("Old password does not match our records.")
+      setError("A senha antiga está incorreta.")
       setSubmitting(false)
       return
     }
@@ -80,7 +80,7 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
         },
         onError: () => {
           setSubmitting(false)
-          setError("Unable to update password, try again later.")
+          setError("Ocorreu um erro ao atualizar a senha.")
         },
       }
     )
@@ -94,18 +94,18 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
         <Modal.Body>
           <div className="flex flex-col gap-y-8">
             <Input
-              label="Old password"
+              label="Senha antiga"
               {...register("old_password", {
-                required: "Old password is required",
+                required: "Campo obrigatório",
               })}
               type="password"
               autoComplete="password"
               errors={errors}
             />
             <Input
-              label="New password"
+              label="Senha nova"
               {...register("new_password", {
-                required: "New password is required",
+                required: "Campo obrigatório",
               })}
               type="password"
               autoComplete="new_password"
@@ -121,10 +121,10 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
             className="!bg-gray-200 !text-gray-900 !border-gray-200 min-h-0"
             onClick={close}
           >
-            Cancel
+            Cancelar
           </Button>
           <Button className="min-h-0" onClick={submit} disabled={submitting}>
-            Save
+            Salvar
             {submitting && <Spinner />}
           </Button>
         </Modal.Footer>

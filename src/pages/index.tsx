@@ -10,7 +10,7 @@ const Home: NextPageWithLayout = () => {
     <>
       <Head
         title="Home"
-        description="Shop all available models only at the ACME. Worldwide Shipping. Secure Payment."
+        description="Paint & Solids une tecnologia e arte, oferecendo impressões 3D e kit de tintas para decorar e explorar a criatividade."
       />
       <Hero />
       <FeaturedProducts />

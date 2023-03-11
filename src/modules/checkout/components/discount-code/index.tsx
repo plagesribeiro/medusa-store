@@ -117,7 +117,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
               <Input
                 label="Code"
                 {...register("discount_code", {
-                  required: "Code is required",
+                  required: "Campo obrigatório",
                 })}
                 errors={errors}
               />

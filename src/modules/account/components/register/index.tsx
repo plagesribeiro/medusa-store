@@ -22,7 +22,7 @@ const Register = () => {
   const router = useRouter()
 
   const handleError = (e: Error) => {
-    setAuthError("An error occured. Please try again.")
+    setAuthError("Ocorreu um erro. Tente novamente.")
   }
 
   const {
@@ -43,41 +43,42 @@ const Register = () => {
 
   return (
     <div className="max-w-sm flex flex-col items-center mt-12">
-      <h1 className="text-large-semi uppercase mb-6">Become a Acme Member</h1>
+      <h1 className="text-large-semi uppercase mb-6">
+        Cadastre-se na Paint & Solids
+      </h1>
       <p className="text-center text-base-regular text-gray-700 mb-4">
-        Create your Acme Member profile, and get access to an enhanced shopping
-        experience.
+        Crie sua conta na Paint & Solids para ter uma experiência melhor.
       </p>
       <form className="w-full flex flex-col" onSubmit={onSubmit}>
         <div className="flex flex-col w-full gap-y-2">
           <Input
-            label="First name"
-            {...register("first_name", { required: "First name is required" })}
+            label="Primeiro nome"
+            {...register("first_name", { required: "Campo obrigatório" })}
             autoComplete="given-name"
             errors={errors}
           />
           <Input
-            label="Last name"
-            {...register("last_name", { required: "Last name is required" })}
+            label="Sobrenome"
+            {...register("last_name", { required: "Campo obrigatório" })}
             autoComplete="family-name"
             errors={errors}
           />
           <Input
             label="Email"
-            {...register("email", { required: "Email is required" })}
+            {...register("email", { required: "Campo obrigatório" })}
             autoComplete="email"
             errors={errors}
           />
           <Input
-            label="Phone"
+            label="Telefone"
             {...register("phone")}
             autoComplete="tel"
             errors={errors}
           />
           <Input
-            label="Password"
+            label="Senha"
             {...register("password", {
-              required: "Password is required",
+              required: "Campo obrigatório",
             })}
             type="password"
             autoComplete="new-password"
@@ -87,30 +88,31 @@ const Register = () => {
         {authError && (
           <div>
             <span className="text-rose-500 w-full text-small-regular">
-              These credentials do not match our records
+              Não conseguimos criar sua conta. Por favor, tente novamente ou
+              entre em contato com nossa equipe.
             </span>
           </div>
         )}
         <span className="text-center text-gray-700 text-small-regular mt-6">
-          By creating an account, you agree to Acme&apos;s{" "}
+          Ao criar uma conta, você concors com Paint & Solids&apos;s{" "}
           <Link href="/content/privacy-policy">
-            <a className="underline">Privacy Policy</a>
+            <a className="underline">Políticas de Privacidade </a>
           </Link>{" "}
-          and{" "}
+          e{" "}
           <Link href="/content/terms-of-use">
-            <a className="underline">Terms of Use</a>
+            <a className="underline">Termos de Uso</a>
           </Link>
           .
         </span>
-        <Button className="mt-6">Join</Button>
+        <Button className="mt-6">Entrar</Button>
       </form>
       <span className="text-center text-gray-700 text-small-regular mt-6">
-        Already a member?{" "}
+        Já possuí uma conta?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
           className="underline"
         >
-          Sign in
+          Fazer login
         </button>
         .
       </span>

@@ -15,9 +15,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
   return (
     <div>
       <div className="small:hidden">
-        <div className="text-xl-semi mb-4 px-8">
-          Hello {customer?.first_name}
-        </div>
+        <div className="text-xl-semi mb-4 px-8">Olá {customer?.first_name}</div>
         <div className="text-base-regular">
           <ul>
             <li>
@@ -25,7 +23,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                 <a className="flex items-center justify-between py-4 border-b border-gray-200 px-8">
                   <div className="flex items-center gap-x-2">
                     <User size={16} />
-                    <span>Profile</span>
+                    <span>Perfil</span>
                   </div>
                   <ChevronDown className="transform -rotate-90" />
                 </a>
@@ -36,7 +34,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                 <a className="flex items-center justify-between py-4 border-b border-gray-200 px-8">
                   <div className="flex items-center gap-x-2">
                     <MapPin size={16} />
-                    <span>Addresses</span>
+                    <span>Endereços</span>
                   </div>
                   <ChevronDown className="transform -rotate-90" />
                 </a>
@@ -47,7 +45,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                 <a className="flex items-center justify-between py-4 border-b border-gray-200 px-8">
                   <div className="flex items-center gap-x-2">
                     <Package size={16} />
-                    <span>Orders</span>
+                    <span>Pedidos</span>
                   </div>
                   <ChevronDown className="transform -rotate-90" />
                 </a>
@@ -59,9 +57,9 @@ const Overview = ({ orders, customer }: OverviewProps) => {
 
       <div className="hidden small:block">
         <div className="text-xl-semi flex justify-between items-start mb-4">
-          <span>Hello {customer?.first_name}</span>
+          <span>Olá {customer?.first_name}</span>
           <span className="text-small-regular text-gray-700">
-            Signed in as:{" "}
+            Logado como:{" "}
             <span className="font-semibold">{customer?.email}</span>
           </span>
         </div>
@@ -75,19 +73,19 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                     {getProfileCompletion(customer)}%
                   </span>
                   <span className="uppercase text-base-regular text-gray-500">
-                    Completed
+                    Completo
                   </span>
                 </div>
               </div>
 
               <div className="flex flex-col gap-y-4">
-                <h3 className="text-large-semi">Addresses</h3>
+                <h3 className="text-large-semi">Endereços</h3>
                 <div className="flex items-end gap-x-2">
                   <span className="text-3xl-semi leading-none">
                     {customer?.shipping_addresses?.length || 0}
                   </span>
                   <span className="uppercase text-base-regular text-gray-500">
-                    Saved
+                    Salvo
                   </span>
                 </div>
               </div>
@@ -95,7 +93,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
 
             <div className="flex flex-col gap-y-4">
               <div className="flex items-center gap-x-2">
-                <h3 className="text-large-semi">Recent orders</h3>
+                <h3 className="text-large-semi">Pedidos recentes</h3>
               </div>
               <ul className="flex flex-col gap-y-4">
                 {orders ? (
@@ -107,13 +105,13 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                             <div className="bg-gray-50 flex justify-between items-center p-4">
                               <div className="grid grid-cols-3 grid-rows-2 text-small-regular gap-x-4 flex-1">
                                 <span className="font-semibold">
-                                  Date placed
+                                  Data do pedido
                                 </span>
                                 <span className="font-semibold">
-                                  Order number
+                                  Número do pedido
                                 </span>
                                 <span className="font-semibold">
-                                  Total amount
+                                  Total do pedido
                                 </span>
                                 <span>
                                   {new Date(order.created_at).toDateString()}
@@ -132,7 +130,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                                 onClick={close}
                               >
                                 <span className="sr-only">
-                                  Go to order #{order.display_id}
+                                  Ir para pedido #{order.display_id}
                                 </span>
                                 <ChevronDown className="-rotate-90" />
                               </button>
